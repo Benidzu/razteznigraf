@@ -1,0 +1,16 @@
+.axis text {
+    font: 1em sans-serif;
+    font-family: 'Poiret One', cursive;
+}
+
+.axis .label {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
