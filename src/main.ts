@@ -1,5 +1,12 @@
+
 export{}
-import * as d3 from 'd3';
+//import * as d3 from 'd3';
+import * as _d3 from "d3";
+
+declare global {
+  const d3: typeof _d3;
+}
+
 interface dataobject {
   [key: string]: string|number;
 }
