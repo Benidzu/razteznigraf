@@ -1,11 +1,11 @@
 
 export{}
-import * as d3 from 'd3';
-//import * as _d3 from "d3";
+//import * as d3 from 'd3';
+import * as _d3 from "d3";
 
-//declare global {
-//  const d3: typeof _d3;
-//}
+declare global {
+  const d3: typeof _d3;
+}
 
 interface dataobject {
   [key: string]: string|number;
@@ -34,9 +34,6 @@ let yAxisText = yColumn;
 let yAxisLabelOffset = 45;
 
 //most outer element
-/*let svg = d3.select("body").append("svg")
-.attr("width",  outerWidth)
-.attr("height", outerHeight);*/
 let container = d3.select("body").append("div")
 .attr("class","container");
 
@@ -52,10 +49,7 @@ let svg = container.append("svg")
 let g = svg.append("g")
 .attr("transform", "translate("+margin.left+","+margin.top+")");
 
-
-
-
-
+//group element for X and Y axes
 let xAxisG = g.append("g")
 .attr("transform", "translate(0," + innerHeight + ")")
 .attr("class", "x axis");
@@ -111,10 +105,9 @@ function addLabel(item:string, index:number){
 }
 
 //velikost kroga primerjava
-let sizeLegend = sidebar.append("g")
-.attr("")
+//TODO
 
-//
+//X in Y osi
 let xAxis = d3.svg.axis().scale(xScale).orient("bottom")
   .outerTickSize(0)
   .ticks(5);
